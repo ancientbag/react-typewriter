@@ -24,7 +24,11 @@ function App() {
     return (
         <>
             <h1 ref={ref} />
-            {isFinished && <button onClick={restart}>Replay</button>}
+            {isFinished && (
+                <button type="button" onClick={restart}>
+                    Replay
+                </button>
+            )}
         </>
     );
 }
@@ -67,7 +71,11 @@ function App() {
     return (
         <>
             <h1 ref={ref} />
-            {isFinished && <button onClick={restart}>Replay</button>}
+            {isFinished && (
+                <button type="button" onClick={restart}>
+                    Replay
+                </button>
+            )}
         </>
     );
 }
