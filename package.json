@@ -1,5 +1,5 @@
 {
-  "name": "react-typewriter",
+  "name": "@ancientbag/react-typewriter",
   "version": "1.0.0",
   "description": "React hooks for typewriter text animation effects",
   "main": "./dist/index.js",
@@ -39,12 +39,13 @@
     "typewriter",
     "animation",
     "hook",
+    "smart",
     "text-effect"
   ],
   "license": "MIT",
   "author": "Denis Timashev",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/ancientbag/react-typewriter"
   }
 }
