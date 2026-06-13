@@ -5,7 +5,7 @@ React hooks for typewriter text animation effects.
 ## Install
 
 ```bash
-npm install react-typewriter
+npm install @ancientbag/react-typewriter
 ```
 
 ## `useTypewriter`
@@ -13,7 +13,7 @@ npm install react-typewriter
 Animates a single string.
 
 ```tsx
-import { useTypewriter } from "react-typewriter";
+import { useTypewriter } from "@ancientbag/react-typewriter";
 
 function App() {
     const { ref, isFinished, restart } = useTypewriter("Hello, world!", {
@@ -57,7 +57,7 @@ function App() {
 Animates multiple sentences with per-sentence and per-letter delays.
 
 ```tsx
-import { useSmartTypewriter } from "react-typewriter";
+import { useSmartTypewriter } from "@ancientbag/react-typewriter";
 
 function App() {
     const { ref, isFinished, restart } = useSmartTypewriter({
