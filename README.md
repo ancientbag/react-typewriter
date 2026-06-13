@@ -16,12 +16,17 @@ Animates a single string.
 import { useTypewriter } from "react-typewriter";
 
 function App() {
-    const { ref, isFinished } = useTypewriter("Hello, world!", {
+    const { ref, isFinished, restart } = useTypewriter("Hello, world!", {
         delay: 100,
         autoStart: true,
     });
 
-    return <h1 ref={ref} />;
+    return (
+        <>
+            <h1 ref={ref} />
+            {isFinished && <button onClick={restart}>Replay</button>}
+        </>
+    );
 }
 ```
 
@@ -34,14 +39,14 @@ function App() {
 
 **Returns**
 
-| Field        | Type                      | Description                          |
-| ------------ | ------------------------- | ------------------------------------ |
-| `ref`        | `RefObject<T>`            | attach to any HTML element           |
-| `start`      | `() => void`              | start typing from the beginning      |
-| `restart`    | `() => void`              | cancel and restart typing            |
-| `pause`      | `() => void`              | pause typing                         |
-| `resume`     | `() => void`              | resume typing after pause            |
-| `isFinished` | `boolean`                 | `true` when animation completes      |
+| Field        | Type           | Description                     |
+| ------------ | -------------- | ------------------------------- |
+| `ref`        | `RefObject<T>` | attach to any HTML element      |
+| `start`      | `() => void`   | start typing from the beginning |
+| `restart`    | `() => void`   | cancel and restart typing       |
+| `pause`      | `() => void`   | pause typing                    |
+| `resume`     | `() => void`   | resume typing after pause       |
+| `isFinished` | `boolean`      | `true` when animation completes |
 
 ## `useSmartTypewriter`
 
@@ -51,7 +56,7 @@ Animates multiple sentences with per-sentence and per-letter delays.
 import { useSmartTypewriter } from "react-typewriter";
 
 function App() {
-    const { ref } = useSmartTypewriter({
+    const { ref, isFinished, restart } = useSmartTypewriter({
         sentences: [
             { text: "Hello!", delay: 80 },
             { text: "How are you?", delayByLetter: { " ": 300 } },
@@ -59,18 +64,23 @@ function App() {
         sentenceDelay: 500,
     });
 
-    return <h1 ref={ref} />;
+    return (
+        <>
+            <h1 ref={ref} />
+            {isFinished && <button onClick={restart}>Replay</button>}
+        </>
+    );
 }
 ```
 
 **Options**
 
-| Option          | Type         | Default | Description                              |
-| --------------- | ------------ | ------- | ---------------------------------------- |
-| `sentences`     | `TSentence[]`| —       | sentences to type (required)             |
-| `sentenceDelay` | `number`     | `300`   | ms delay before starting a new sentence  |
-| `autoStart`     | `boolean`    | `true`  | start animating on mount                 |
-| `onFinish`      | `() => void` | —       | called when all sentences finish typing  |
+| Option          | Type          | Default | Description                             |
+| --------------- | ------------- | ------- | --------------------------------------- |
+| `sentences`     | `TSentence[]` | —       | sentences to type (required)            |
+| `sentenceDelay` | `number`      | `300`   | ms delay before starting a new sentence |
+| `autoStart`     | `boolean`     | `true`  | start animating on mount                |
+| `onFinish`      | `() => void`  | —       | called when all sentences finish typing |
 
 **Sentence object**
 
@@ -82,14 +92,14 @@ function App() {
 
 **Returns**
 
-| Field        | Type                      | Description                          |
-| ------------ | ------------------------- | ------------------------------------ |
-| `ref`        | `RefObject<T>`            | attach to any HTML element           |
-| `start`      | `() => void`              | start typing from the beginning      |
-| `restart`    | `() => void`              | cancel and restart typing            |
-| `pause`      | `() => void`              | pause typing                         |
-| `resume`     | `() => void`              | resume typing after pause            |
-| `isFinished` | `boolean`                 | `true` when animation completes      |
+| Field        | Type           | Description                     |
+| ------------ | -------------- | ------------------------------- |
+| `ref`        | `RefObject<T>` | attach to any HTML element      |
+| `start`      | `() => void`   | start typing from the beginning |
+| `restart`    | `() => void`   | cancel and restart typing       |
+| `pause`      | `() => void`   | pause typing                    |
+| `resume`     | `() => void`   | resume typing after pause       |
+| `isFinished` | `boolean`      | `true` when animation completes |
 
 ## License
 
